@@ -1,0 +1,10 @@
+'''
+Add:
+'''
+
+*.key
+*.pem
+*password*
+*secret*
+.env
+private/
