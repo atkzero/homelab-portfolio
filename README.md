@@ -7,7 +7,7 @@
 
 ## Infrastructure Overview
 - **Host Machines**: 
-    - Lenovo Ideapad Flex 5 [i3-1115G4](*Arch Linux 6.17.5*)
+    - Lenovo Ideapad Flex 5 14ITL05 [i3-1115G4](*Arch Linux 6.17.5*)
     - HP OMEN 25L GT12-0xxx [i7-10700F](*Arch Linux 6.17.5*)
     - HP Laptop 14-ep0xxx [i3-1315U](Proxmox 9.0.11)
     - HP TinyPC [Intel Celeron J3455](Proxmox 9.0.11)

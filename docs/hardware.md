@@ -1,6 +1,6 @@
 # Hardware Inventory
 
-## Main Desktop
+## HP Omen 25L GT12-0xxx
 - **Hostname**: archomen
 - **CPU**: [Intel Core i7-10700F]
 - **RAM**: [32GB]
@@ -11,7 +11,7 @@
 - **DE/WM**: KDE
 - **IP**: 192.168.1.40 (static)
 
-## Laptop
+## Lenovo IdeaPad Flex 5 14ITL05
 - **Hostname**: ghost 
 - **CPU**: [Intel Core i3-1115G4]
 - **RAM**: [4GB]
