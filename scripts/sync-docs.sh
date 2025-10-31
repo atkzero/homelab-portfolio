@@ -1,11 +1,9 @@
 #!/bin/zsh
-NOTES_DIR="$HOME/Documents"  # adjust to your path
+NOTES_DIR="$HOME/Documents"  
 
 cd "$NOTES_DIR" || exit 1
 
-echo "Syncing notes..."
-
-# Add and commit any local changes
+echo "Syncing documents..."
 git add .
 if git diff --staged --quiet; then
     echo "No local changes to commit"
@@ -14,12 +12,12 @@ else
     echo "Local changes committed"
 fi
 
-# Pull from GitHub (get remote changes)
-echo "Pulling from GitHub..."
+# Pull from GitHub
+echo "Pulling..."
 git pull --rebase origin main
 
-# Push to GitHub (send local changes)
-echo "Pushing to GitHub..."
+# Push to GitHub
+echo "Pushing..."
 git push origin main
 
-echo "✓ Sync complete!"
+echo "✓ Synced up!"
