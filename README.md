@@ -13,7 +13,7 @@
     - HP TinyPC [Intel Celeron J3455](Proxmox 9.0.11)
     - x2 Raspberry Pi 3 Model B+ [Broadcom BCM2837](Nothing is running)
     - Apple Macbook Pro A1502 [i5-4258U](Nothing is running)
-
+    - Dell PowerEdge R720 [Intel Xeon E5-2630](Proxmox 9.0.11)
 - **Network**: 
     - Network Hub: [Netgear FS105]
     - Router: 
