@@ -3,7 +3,7 @@
 ## Quick Info
 - **Location**: Home Office
 - **Purpose**: Learning, Development, Self-hosting, Digital Freedom
-- **Last Updated**: 2025-10-30 18:35
+- **Last Updated**: 2025-11-11 22:56
 
 ## Infrastructure Overview
 - **Host Machines**: 
@@ -14,7 +14,8 @@
     - x2 Raspberry Pi 3 Model B+ [Broadcom BCM2837](Nothing is running)
     - Apple Macbook Pro A1502 [i5-4258U](Nothing is running)
     - Dell PowerEdge R720 [Intel Xeon E5-2630](Proxmox 9.0.11)
-- **Network**: 
+- **Network**:
+    - Switch: [Cisco Catalyst 2960] **WS-C2960S-24PS-L**
     - Network Hub: [Netgear FS105]
     - Router: 
         - [Netgear Nighthawk RAX40]
