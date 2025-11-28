@@ -10,14 +10,15 @@
     - Lenovo Ideapad Flex 5 14ITL05 [i3-1115G4](*Arch Linux 6.17.5*)
     - HP OMEN 25L GT12-0xxx [i7-10700F](*Arch Linux 6.17.5*)
     - HP Laptop 14-ep0xxx [i3-1315U](Proxmox 9.0.11)
-    - HP TinyPC [Intel Celeron J3455](Proxmox 9.0.11)
-    - x2 Raspberry Pi 3 Model B+ [Broadcom BCM2837](Nothing is running)
-    - Apple Macbook Pro A1502 [i5-4258U](Nothing is running)
+    - HP TinyPC [Intel Celeron J3455](No OS)
+    - x2 Raspberry Pi 3 Model B+ [Broadcom BCM2837](No OS)
+    - Apple Macbook Pro A1502 [i5-4258U](No OS)
     - Dell PowerEdge R720 [Intel Xeon E5-2630](Proxmox 9.0.11)
 - **Network**:
     - Switch: [Cisco Catalyst 2960] **WS-C2960S-24PS-L**
     - Network Hub: [Netgear FS105]
-    - Router: 
+    - Router:
+        - [Proxmox VM, Arch Linux]
         - [Netgear Nighthawk RAX40]
         - [TP-Link Deco 6E]
 - **Services**:
