@@ -9,11 +9,16 @@
 - **Host Machines**: 
     - Lenovo Ideapad Flex 5 14ITL05 [i3-1115G4](*Arch Linux 6.17.5*)
     - HP OMEN 25L GT12-0xxx [i7-10700F](*Arch Linux 6.17.5*)
-    - HP Laptop 14-ep0xxx [i3-1315U](Proxmox 9.0.11)
+    - HP Laptop 14-ep0xxx [i3-1315U](No OS)
     - HP TinyPC [Intel Celeron J3455](No OS)
     - x2 Raspberry Pi 3 Model B+ [Broadcom BCM2837](No OS)
     - Apple Macbook Pro A1502 [i5-4258U](No OS)
     - Dell PowerEdge R720 [Intel Xeon E5-2630](Proxmox 9.0.11)
+    - Apple MacBook Air A1466 [](No OS)
+    - HP ProBook x360 435 G8 [AMD Ryzen 3 5400U](No OS)
+    - HP Chromebook 14 G4 [](No OS)
+    - Samsung Notebook XE500C13 [](No OS)
+    - Dell Chromebook 11 3180 [](No OS)
 - **Network**:
     - Switch: [Cisco Catalyst 2960] **WS-C2960S-24PS-L**
     - Network Hub: [Netgear FS105]
