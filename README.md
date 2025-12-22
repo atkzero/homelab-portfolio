@@ -51,11 +51,11 @@ homelab-portfolio/
 │   ├── procedures.md           # How-to guides
 │   └── troubleshooting.md      # Common issues
 ├── configs/
-│   ├── Arch Router/
+│   ├── archrouter/
 │   │   └── dnsmasq.conf
-│   ├── waybar/
+│   ├── cisco-c2960/
 │   │   ├── config
-│   │   └── style.css
+│   │   └── 
 │   └── scripts/
 │       └── sync.sh
 ├── diagrams/
