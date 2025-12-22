@@ -5,6 +5,9 @@
 - **Purpose**: Learning, Development, Self-hosting, Digital Freedom
 - **Last Updated**: 2025-11-11 22:56
 
+## Purpose
+This README is for the purpose of explaining all projects within my "homelab" environment and reasoning for this in the first place. This homelab portfolio is designed for me to document all projects whether fail or succeed. A place for me to document my learning journey and allow others to see. This homelab in general is setup for me to have maximum learning, not for anything all too practical. To go along with that I also am very interested in self-hosting and becoming digital independent to some extent.
+
 ## Infrastructure Overview
 - **Host Machines**: 
     - Lenovo Ideapad Flex 5 14ITL05 [i3-1115G4] [4GB RAM](*Arch Linux 6.17.5*)
