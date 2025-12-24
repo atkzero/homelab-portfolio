@@ -61,7 +61,10 @@ homelab-portfolio/
 │   │   └── 
 │   └── scripts/
 │       └── sync.sh
+├── projects/
+│   ├── ProjectArchRouter-v0.1.md
+│   └── README.md
 ├── diagrams/
-│   └── network.png
+│   └── README.md
 └── changelog.md                # Changes over time
 
