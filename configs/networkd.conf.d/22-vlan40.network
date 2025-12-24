@@ -1,0 +1,7 @@
+[Match]
+Name=vlan.40
+
+[Network]
+IPv4Forwarding=yes
+Address=10.0.40.1/28
+

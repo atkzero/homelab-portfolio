@@ -1,0 +1,6 @@
+[Match]
+Name=vlan.50
+
+[Network]
+IPv4Forwarding=yes
+Address=10.0.50.1/24
