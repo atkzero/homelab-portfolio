@@ -1,7 +1,7 @@
 # Project Arch Router
-## atkzero
-## 2025-12-23
-## archrouter v0.1
+atkzero
+2025-12-23
+archrouter v0.1
 
 ### Abstract
 ```
