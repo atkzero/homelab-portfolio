@@ -6,7 +6,11 @@
 - **Last Updated**: 2025-11-11 22:56
 
 ## Purpose
-This README is for the purpose of explaining all projects within my "homelab" environment and reasoning for it. Along with a brief overview of whats to be contained in this repo. This homelab portfolio is designed for me to document all projects whether fail or succeed. A place for me to document my learning journey and allow others to see. This homelab in general is setup for me to have maximum learning, not for anything all too practical. To go along with that I also am very interested in self-hosting and becoming digital independent to some extent.
+This repo documents all projects within my homelab environment and the reasoning behind them. It serves as both an overview of what's contained here and a running record of my experimentation.
+
+This homelab portfolio exists primarily as a learning space. Projects documented here may succeed, fail, or evolve over time and all of that is fine with me. The goal is not to capture perfection, it is to capture the learning process itself and showcase it. This will also provide good learning for other people in my current position at the time of writing this.
+
+The homelab is designed to maximize hands on learning rather than immediate practicality. Along this learning journey I will explore a plethora of topics, and already have brushed up on some fun ones. A recurring theme you will see throughout my network projects will be self-hosting, working toward a degree of digital independence and "making it harder, for the fun". Projects held within here will range from typical projects to obscure, not well documented, projects.
 
 ## Infrastructure Overview
 - **Host Machines**: 
