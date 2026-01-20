@@ -106,13 +106,13 @@ $ sudo btrfs fi du -s /var/lib/machines/MyContainer
 
 #: this is the output from my containers pre-configuration but fully installed::
 $ sudo btrfs fi du -s /var/lib/machines/rdns-container
-:::::Total:::Exclusive::Set shared::Filename:::::::::::
+     Total   Exclusive  Set shared  Filename
  722.82MiB   722.82MiB       0.00B  /var/lib/machines/rdns-container::
 $ sudo btrfs fi du -s /var/lib/machines/kea-container
-:::::Total:::Exclusive::Set shared::Filename:::::::::::
+     Total   Exclusive  Set shared  Filename
  747.68MiB   747.68MiB       0.00B  /var/lib/machines/kea-container::
 $ sudo btrfs fi du -s /var/lib/machines/wg-container
-:::::Total:::Exclusive::Set shared::Filename:::::::::::
+     Total   Exclusive  Set shared  Filename
  683.22MiB   683.22MiB       0.00B  /var/lib/machines/wg-container
 
 #: the command for spinning containers with a base snapshot system::
