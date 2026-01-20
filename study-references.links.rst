@@ -6,50 +6,50 @@ Introduction
 Reasoning
 =========
 |This document serves as a structured record of the research, design decisions, and configuration 
-|behind my SALR(Secondary Arch Linux Router) project. It documents not only what was configured, 
-|but why each choice was made, with the goal of building a router platform that is fully understood 
-|rather than merely functional.
+behind my SALR(Secondary Arch Linux Router) project. It documents not only what was configured, 
+but why each choice was made, with the goal of building a router platform that is fully understood 
+rather than merely functional.
 
 |Arch Linux was chosen deliberately. While familiarity and personal affinity played a role, 
-|the primary motivation was intentional difficulty. Instead, I wanted full control over the operating 
-|system and network stack so I could understand the systemd as deeply as possible, down to the level 
-|where behavior is explained by configuration and design rather than assumption. Reviewing kernel 
-|or daemon source code is not the immediate goal, but this project is designed to build a foundation 
-|where doing so later would be meaningful rather overwhelming.
+the primary motivation was intentional difficulty. Instead, I wanted full control over the operating 
+system and network stack so I could understand the systemd as deeply as possible, down to the level 
+where behavior is explained by configuration and design rather than assumption. Reviewing kernel 
+or daemon source code is not the immediate goal, but this project is designed to build a foundation 
+where doing so later would be meaningful rather overwhelming.
 
 |This approach forces learning to stick for me. By assembling the system piece by piece, I gain a 
-|concrete understanding of how Linux-based routers actually work. Routing, firewalls, DNS, DHCP, VPNs, 
-|and service isolation as they exist in real infrastructure. This reflects how much of modern IT and 
-|networking is built today, Linux servers acting as the backbone of enterprise and service-provider 
-|environments.
+concrete understanding of how Linux-based routers actually work. Routing, firewalls, DNS, DHCP, VPNs, 
+and service isolation as they exist in real infrastructure. This reflects how much of modern IT and 
+networking is built today, Linux servers acting as the backbone of enterprise and service-provider 
+environments.
 
 |Linux's flexibility and transparency are central to this project. The freedom to design the system 
-|explicitly, rather than adapt to a predefined architecture, is both more educational and more engaging. 
-|This work also aligns with my near-term professional goals of pursuing the CCNA and LPIC-1 certifications, 
-|grounding theoretical knowledge in a practical, production like system.
+explicitly, rather than adapt to a predefined architecture, is both more educational and more engaging. 
+This work also aligns with my near-term professional goals of pursuing the CCNA and LPIC-1 certifications, 
+grounding theoretical knowledge in a practical, production like system.
 
 |For the reasons, purpose built router operating systems such as VyOS, OpenWRT, OPNsense, and Mikrotik 
-|were intentionally avoided. While they are excellent platforms, they abstract away too many implementation 
-|details for the learning objectives of this project. The goal of SALR is not convenience or speed of 
-|deployment it is full ownership of the system, from boot to packets flowing.
+were intentionally avoided. While they are excellent platforms, they abstract away too many implementation 
+details for the learning objectives of this project. The goal of SALR is not convenience or speed of 
+deployment it is full ownership of the system, from boot to packets flowing.
 |
 
 Documentation Structure and Organization
 ========================================
 |This document is not ordered as a strict step-by-step build guide. The work on SALR was not linear, 
-|and presenting it that way would misrepresent how the system was actually built and deployed. 
-|Configuration and research moved back and forth between components as problems surfaced and design 
-|decisions changed. Changes in one area often required revisiting others. Progress happened through 
-|iteration rather than sequence.
+and presenting it that way would misrepresent how the system was actually built and deployed. 
+Configuration and research moved back and forth between components as problems surfaced and design 
+decisions changed. Changes in one area often required revisiting others. Progress happened through 
+iteration rather than sequence.
 
 |For that reason, the document is organized by the system components and services, not by time. 
-|Each major area has its own section. These sections may reference commands, notes or troubleshooting 
-|steps that were used outside the narrow scope of that component, but were relevant at the time. 
-|So some material appears in sections where it may not traditionally belong. This is intentional. 
-|For example, BTRFS commands appear under the containerization section because BTRFS subvolumes are 
-|used to store containers, and those commands were primarily used to inspect container disk usage. 
-|Each section is meant to function as a focused reference for understanding, modifying or rebuilding 
-|that part of the system.
+Each major area has its own section. These sections may reference commands, notes or troubleshooting 
+steps that were used outside the narrow scope of that component, but were relevant at the time. 
+So some material appears in sections where it may not traditionally belong. This is intentional. 
+For example, BTRFS commands appear under the containerization section because BTRFS subvolumes are 
+used to store containers, and those commands were primarily used to inspect container disk usage. 
+Each section is meant to function as a focused reference for understanding, modifying or rebuilding 
+that part of the system.
 |
 
 BTRFS
