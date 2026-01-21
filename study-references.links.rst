@@ -118,19 +118,17 @@ $ sudo btrfs fi du -s /var/lib/machines/wg-container
 #: the command for spinning containers with a base snapshot system::
 $ systemd-nspawn --template=/.snapshots/403/snapshot -b -D my-container
 
-### machinectl commands
-set-limit [NAME] BYTES
-Sets the maximum size in bytes that a specific container or VM image, or all images, may grow up to on disk (disk quota). Takes either one or two parameters. The first, optional parameter refers to a container or VM image name. If specified, the size limit of the specified image is changed. If omitted, the overall size limit of the sum of all images stored locally is changed. The final argument specifies the size limit in bytes, possibly suffixed by the usual K, M, G, T units. If the size limit shall be disabled, specify "-" as size.
+#: machinectl commands::
+$ machinectl shell root@container
 
-Note that per-container size limits are only supported on btrfs file systems.
 
-Added in version 220.
-
-### Links:
-[https://wiki.archlinux.org/title/Systemd-nspawn]
-[https://man.archlinux.org/man/systemd-nspawn.1]
-[https://man.archlinux.org/man/machinectl.1]
-
+Links:
+------
+|https://wiki.archlinux.org/title/Systemd-nspawn
+https://man.archlinux.org/man/systemd-nspawn.1
+https://man.archlinux.org/man/machinectl.1
+https://man.archlinux.org/man/systemd.nspawn.5.en
+|
 BIRD2 {ROUTING PROTOCOL DAEMON}
 ===============================
 #: this along with nftables will remain on main system and not be containerized because i want my 
@@ -156,24 +154,36 @@ Links:
 
 NETWORKD
 ========
+|Made an IPVLAN along with 3 VLAN interfaces ontop of the existing "eno1" interface.
+IPVLAN is in bridge and L3 mode. Made .nspawn file for containers attaching eno1 as the IPVLAN bridge.
+|
 Links:
 ------
-#: since systemd is so monolithic these are all networkd and related man pages
-[https://man.archlinux.org/search?q=networkd&go=Go]
-#: .netdev files and their config parameters
-[https://man.archlinux.org/man/systemd.netdev.5.en]
-#: this is the man page for setting .network files
-[https://man.archlinux.org/man/systemd.network.5.en]
-#: networkctl commands and more config options
-[https://man.archlinux.org/man/networkctl.1.en]
+#: since systemd is so monolithic these are all networkd and related man pages:
+https://man.archlinux.org/search?q=networkd&go=Go
+#: .netdev files and their config parameters:
+https://man.archlinux.org/man/systemd.netdev.5.en
+#: this is the man page for setting .network files:
+https://man.archlinux.org/man/systemd.network.5.en
+#: networkctl commands and more config options:
+https://man.archlinux.org/man/networkctl.1.en
 
-KEA + MariaDB
-=============
+KEA + MariaDB {DHCP}
+====================
 
-#: Kea will be configured with the MariaDB backend mostly so I have stored leasefiles but this will be my 
-#: first step into a backend database for a DHCP server. 
-
+|Kea will be configured with the MariaDB backend mostly so I have stored leasefiles but this will be my 
+first step into a backend database for a DHCP server. The kea-dhcp4 server was first JSON file to be 
+made. Getting ready to configure MariaDB, obviously a lot of the config is not needed but none the less
+I will be configuring the database first before starting up kea service.  
+|
 Links:
 ------
 [https://kea.readthedocs.io/en/stable/arm/admin.html]
 [https://wiki.archlinux.org/title/Kea]
+[https://wiki.archlinux.org/title/MariaDB]
+
+USER AND GROUPS {DAC}
+=====================
+UNBOUND {rDNS}
+==============
+
