@@ -157,6 +157,7 @@ NETWORKD
 |Made an IPVLAN along with 3 VLAN interfaces ontop of the existing "eno1" interface.
 IPVLAN is in bridge and L3 mode. Made .nspawn file for containers attaching eno1 as the IPVLAN bridge.
 |
+
 Links:
 ------
 #: since systemd is so monolithic these are all networkd and related man pages:
@@ -176,6 +177,7 @@ first step into a backend database for a DHCP server. The kea-dhcp4 server was f
 made. Getting ready to configure MariaDB, obviously a lot of the config is not needed but none the less
 I will be configuring the database first before starting up kea service.  
 |
+
 Links:
 ------
 [https://kea.readthedocs.io/en/stable/arm/admin.html]
