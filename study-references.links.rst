@@ -175,15 +175,30 @@ KEA + MariaDB {DHCP}
 |Kea will be configured with the MariaDB backend mostly so I have stored leasefiles but this will be my 
 first step into a backend database for a DHCP server. The kea-dhcp4 server was first JSON file to be 
 made. Getting ready to configure MariaDB, obviously a lot of the config is not needed but none the less
-I will be configuring the database first before starting up kea service.  
+I will be configuring the database first before starting up kea service. Using the InnoDB engine for MariaDB.
+Configured MariaDB Server and create a user 
 |
+
+#: MariaDB SQL commands for setting up MariaDB server::
+@ MariaDB> SELECT @@system_time_zone;
+@ MariaDB> SELECT @@global.time_zone;
+@ MariaDB> SELECT @@session.time_zone;
+@ MariaDB> CREATE USER 'kea'@'localhost' IDENTIFIED BY '**********'
+@ MariaDB> CREATE DATABASE kea_db;
+@ MariaDB> GRANT ALL ON kea_db.* TO 'kea'@'localhost';
+#: keactrl command; shell script controls the start, shutdown, and reconfig of kea servers::
+$ keactrl <command> [-c keactrl-config-file] [-s server[,server,...]]
 
 Links:
 ------
 [https://kea.readthedocs.io/en/stable/arm/admin.html]
 [https://wiki.archlinux.org/title/Kea]
 [https://wiki.archlinux.org/title/MariaDB]
-
+[https://mariadb.com/docs/server]
+[https://kea.readthedocs.io/en/stable/arm/dhcp4-srv.html#dhcpv4-server-configuration]
+[https://datatracker.ietf.org/doc/html/rfc2131#appendix-A]
+#: This is a detailed report from ISC detailing the perfomance differences between different leasing types
+[https://reports.kea.isc.org/performance/stable/2.6.4/report.html]
 USER AND GROUPS {DAC}
 =====================
 UNBOUND {rDNS}
