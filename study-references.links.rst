@@ -154,9 +154,16 @@ Links:
 
 NETWORKD
 ========
-|Made an IPVLAN along with 3 VLAN interfaces ontop of the existing "eno1" interface.
-IPVLAN is in bridge and L3 mode. Made .nspawn file for containers attaching eno1 as the IPVLAN bridge.
+|Made a bridge [br25] on top of cntrl VLAN interface on the router since bridge made the most sense 
+for my use case. Had to change the systemd-nspawn@service to stop using the --network-veth option and 
+change to --network-bridge=br25. This was needed because I was having problems with a ve* container interface 
+being made and not attatching to the right interfaces.
 |
+#: These commands help hunt down the culprit of my problem::
+$ networkctl edit [DEVICE NAME]
+$ networkctl reload
+$ systemctl status systemd-nspawn@container-name
+$ bridge link
 
 Links:
 ------
@@ -172,11 +179,18 @@ https://man.archlinux.org/man/networkctl.1.en
 KEA + MariaDB {DHCP}
 ====================
 
-|Kea will be configured with the MariaDB backend mostly so I have stored leasefiles but this will be my 
-first step into a backend database for a DHCP server. The kea-dhcp4 server was first JSON file to be 
-made. Getting ready to configure MariaDB, obviously a lot of the config is not needed but none the less
+|Kea will be configured with the MariaDB backend mostly so I have stored hosts files, and memfiles will 
+used to handle lease files. The performance boost for this specific setup is detailed in [Link 9] below. 
+This will be my first step into a backend database for a DHCP server. The kea-dhcp4 server was first JSON file 
+to be made. Getting ready to configure MariaDB, obviously a lot of the config is not needed but none the less
 I will be configuring the database first before starting up kea service. Using the InnoDB engine for MariaDB.
-Configured MariaDB Server and create a user 
+Configured MariaDB Server and create a user. Kea crossreferences alot of dns topics due to the DDNS options and 
+the nature of DHCP and their options. For example setting up a DNR option for dhcpv4 server:
+|
+::
+"data": "2, rdns-container.cntrl., 172.25.44.12, alpn=dot\\,doq port=8530"
+|json file config for v4-dnr options above ^. Configuring the JSON v4 took 2 days to finish up. 
+The dhcpv6 is the next one to configure.
 |
 
 #: MariaDB SQL commands for setting up MariaDB server::
@@ -191,14 +205,20 @@ $ keactrl <command> [-c keactrl-config-file] [-s server[,server,...]]
 
 Links:
 ------
-[https://kea.readthedocs.io/en/stable/arm/admin.html]
-[https://wiki.archlinux.org/title/Kea]
-[https://wiki.archlinux.org/title/MariaDB]
-[https://mariadb.com/docs/server]
-[https://kea.readthedocs.io/en/stable/arm/dhcp4-srv.html#dhcpv4-server-configuration]
-[https://datatracker.ietf.org/doc/html/rfc2131#appendix-A]
+[1.] [https://kea.readthedocs.io/en/stable/arm/admin.html]
+[2.] [https://wiki.archlinux.org/title/Kea]
+[3.] [https://wiki.archlinux.org/title/MariaDB]
+[4.] [https://mariadb.com/docs/server]
+[5.] [https://kea.readthedocs.io/en/stable/arm/dhcp4-srv.html#dhcpv4-server-configuration]
+[6.] [https://datatracker.ietf.org/doc/html/rfc2131#appendix-A]
 #: This is a detailed report from ISC detailing the perfomance differences between different leasing types
-[https://reports.kea.isc.org/performance/stable/2.6.4/report.html]
+[7.] [https://reports.kea.isc.org/performance/stable/2.6.4/report.html]
+#: RFC 9463
+[8.] [https://datatracker.ietf.org/doc/html/rfc9463]
+#: RFC 8499 {referenced in RFC 9463 just holds terminology for DNS}
+[9.] [https://datatracker.ietf.org/doc/html/rfc8499]
+#: Kea Example docs
+[10.] [https://gitlab.isc.org/isc-projects/kea/-/blob/master/doc/examples/kea4/all-options.json]
 USER AND GROUPS {DAC}
 =====================
 UNBOUND {rDNS}
