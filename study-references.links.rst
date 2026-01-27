@@ -65,23 +65,23 @@ Links:
 
 #: the process for changing all files in a dir to the parent directories attribute
 .. code-block:: bash
-  $ mv /path/to/dir /path/to/dir_old
-  $ mkdir /path/to/dir
-  $ chattr +C /path/to/dir
-  $ cp -a --reflink=never /path/to/dir_old/. /path/to/dir
-  $ rm -rf /path/to/dir_old
+   mv /path/to/dir /path/to/dir_old
+   mkdir /path/to/dir
+   chattr +C /path/to/dir
+   cp -a --reflink=never /path/to/dir_old/. /path/to/dir
+   rm -rf /path/to/dir_old
 
 #: running the cp command for files on btrfs partition, the files/dir copied over will inherit the
 #: subvolumes [if the subvolume is mounted with nodatacow] and dirs with nocow attr 
 
 #: Mounting and creating btrfs subvolumes
 .. code-block:: bash
-  $ mount device /mnt/ -o subvolid=5
-  $ btrfs subvolume create /mnt/subvol_root/
-  $ btrfs subvolume create /mnt/sub
-  $ umount /mnt/
-  $ mount -o subvol=/subvol_root device /mnt/
-  $ mount -o subvol=/subvol_home --mkdir device /mnt/home/
+   mount device /mnt/ -o subvolid=5
+   btrfs subvolume create /mnt/subvol_root/
+   btrfs subvolume create /mnt/sub
+   umount /mnt/
+   mount -o subvol=/subvol_root device /mnt/
+   mount -o subvol=/subvol_home --mkdir device /mnt/home/
 
 KERNEL {LINUX-HARDENED}
 =======================
@@ -97,21 +97,21 @@ CONTAINERIZATION {SYSTEMD-NSPAWN}
 =================================
 #: using btrfs subvolume as a container root
 .. code-block:: bash
-  $ btrfs subvolume create ~/MyContainer
-  $ pacstrap -K -c ~/MyContainer base [[additional packages/groups]]
-  $ systemd-nspawn -D ~/MyContainer #this drops you into container.
-  $ systemd-nspawn -b -D ~/MyContainer #this boots and drops you in.
-  $ machinectl enable/start MyContainer
+   btrfs subvolume create ~/MyContainer
+   pacstrap -K -c ~/MyContainer base [[additional packages/groups]]
+   systemd-nspawn -D ~/MyContainer #this drops you into container.
+   systemd-nspawn -b -D ~/MyContainer #this boots and drops you in.
+   machinectl enable/start MyContainer
 
 .. code-block:: bash 
-    $ sudo btrfs fi du -s /var/lib/machines/MyContainer //showing specific disk usage of btrfs subvolumes/nspawn containers
-    $ sudo btrfs fi du -s /var/lib/machines/rdns-container
+     sudo btrfs fi du -s /var/lib/machines/MyContainer //showing specific disk usage of btrfs subvolumes/nspawn containers
+     sudo btrfs fi du -s /var/lib/machines/rdns-container
      Total   Exclusive  Set shared  Filename
  722.82MiB   722.82MiB       0.00B  /var/lib/machines/rdns-container
-    $ sudo btrfs fi du -s /var/lib/machines/kea-container
+     sudo btrfs fi du -s /var/lib/machines/kea-container
      Total   Exclusive  Set shared  Filename
  747.68MiB   747.68MiB       0.00B  /var/lib/machines/kea-container
-    $ sudo btrfs fi du -s /var/lib/machines/wg-container
+     sudo btrfs fi du -s /var/lib/machines/wg-container
      Total   Exclusive  Set shared  Filename
  683.22MiB   683.22MiB       0.00B  /var/lib/machines/wg-container
 
