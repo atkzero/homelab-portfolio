@@ -63,23 +63,25 @@ Links:
 [https://man.archlinux.org/man/core/btrfs-progs/btrfs-subvolume.8.en]
 [https://www.youtube.com/watch?v=RPO-fS6HQbY]
 
-#: the process for changing all files in a dir to the parent directories attribute::
-$ mv /path/to/dir /path/to/dir_old
-$ mkdir /path/to/dir
-$ chattr +C /path/to/dir
-$ cp -a --reflink=never /path/to/dir_old/. /path/to/dir
-$ rm -rf /path/to/dir_old
+#: the process for changing all files in a dir to the parent directories attribute
+.. code-block:: bash
+  $ mv /path/to/dir /path/to/dir_old
+  $ mkdir /path/to/dir
+  $ chattr +C /path/to/dir
+  $ cp -a --reflink=never /path/to/dir_old/. /path/to/dir
+  $ rm -rf /path/to/dir_old
 
 #: running the cp command for files on btrfs partition, the files/dir copied over will inherit the
 #: subvolumes [if the subvolume is mounted with nodatacow] and dirs with nocow attr 
 
-#: Mounting and creating btrfs subvolumes::
-$ mount device /mnt/ -o subvolid=5
-$ btrfs subvolume create /mnt/subvol_root/
-$ btrfs subvolume create /mnt/sub
-$ umount /mnt/
-$ mount -o subvol=/subvol_root device /mnt/
-$ mount -o subvol=/subvol_home --mkdir device /mnt/home/
+#: Mounting and creating btrfs subvolumes
+.. code-block:: bash
+  $ mount device /mnt/ -o subvolid=5
+  $ btrfs subvolume create /mnt/subvol_root/
+  $ btrfs subvolume create /mnt/sub
+  $ umount /mnt/
+  $ mount -o subvol=/subvol_root device /mnt/
+  $ mount -o subvol=/subvol_home --mkdir device /mnt/home/
 
 KERNEL {LINUX-HARDENED}
 =======================
@@ -93,32 +95,30 @@ Links:
 
 CONTAINERIZATION {SYSTEMD-NSPAWN}
 =================================
-#: using btrfs subvolume as a container root::
-$ btrfs subvolume create ~/MyContainer
-$ pacstrap -K -c ~/MyContainer base [[additional packages/groups]]
-$ systemd-nspawn -D ~/MyContainer #this drops you into container.
-$ systemd-nspawn -b -D ~/MyContainer #this boots and drops you in.
-$ machinectl enable/start MyContainer
+#: using btrfs subvolume as a container root
+.. code-block:: bash
+  $ btrfs subvolume create ~/MyContainer
+  $ pacstrap -K -c ~/MyContainer base [[additional packages/groups]]
+  $ systemd-nspawn -D ~/MyContainer #this drops you into container.
+  $ systemd-nspawn -b -D ~/MyContainer #this boots and drops you in.
+  $ machinectl enable/start MyContainer
 
-
-#: showing specific disk usage of btrfs subvolumes/nspawn containers::
-$ sudo btrfs fi du -s /var/lib/machines/MyContainer
-
-#: this is the output from my containers pre-configuration but fully installed::
-$ sudo btrfs fi du -s /var/lib/machines/rdns-container
+.. code-block:: bash 
+    $ sudo btrfs fi du -s /var/lib/machines/MyContainer //showing specific disk usage of btrfs subvolumes/nspawn containers
+    $ sudo btrfs fi du -s /var/lib/machines/rdns-container
      Total   Exclusive  Set shared  Filename
- 722.82MiB   722.82MiB       0.00B  /var/lib/machines/rdns-container::
-$ sudo btrfs fi du -s /var/lib/machines/kea-container
+ 722.82MiB   722.82MiB       0.00B  /var/lib/machines/rdns-container
+    $ sudo btrfs fi du -s /var/lib/machines/kea-container
      Total   Exclusive  Set shared  Filename
- 747.68MiB   747.68MiB       0.00B  /var/lib/machines/kea-container::
-$ sudo btrfs fi du -s /var/lib/machines/wg-container
+ 747.68MiB   747.68MiB       0.00B  /var/lib/machines/kea-container
+    $ sudo btrfs fi du -s /var/lib/machines/wg-container
      Total   Exclusive  Set shared  Filename
  683.22MiB   683.22MiB       0.00B  /var/lib/machines/wg-container
 
-#: the command for spinning containers with a base snapshot system::
+#: the command for spinning containers with a base snapshot system
 $ systemd-nspawn --template=/.snapshots/403/snapshot -b -D my-container
 
-#: machinectl commands::
+#: machinectl commands
 $ machinectl shell root@container
 
 
@@ -179,14 +179,14 @@ https://man.archlinux.org/man/networkctl.1.en
 KEA + MariaDB {DHCP}
 ====================
 
-|Kea will be configured with the MariaDB backend mostly so I have stored hosts files, and memfiles will 
+Kea will be configured with the MariaDB backend mostly so I have stored hosts files, and memfiles will 
 used to handle lease files. The performance boost for this specific setup is detailed in [Link 9] below. 
 This will be my first step into a backend database for a DHCP server. The kea-dhcp4 server was first JSON file 
 to be made. Getting ready to configure MariaDB, obviously a lot of the config is not needed but none the less
 I will be configuring the database first before starting up kea service. Using the InnoDB engine for MariaDB.
 Configured MariaDB Server and create a user. Kea crossreferences alot of dns topics due to the DDNS options and 
 the nature of DHCP and their options. For example setting up a DNR option for dhcpv4 server:
-|
+
 ::
 "data": "2, rdns-container.cntrl., 172.25.44.12, alpn=dot\\,doq port=8530"
 |json file config for v4-dnr options above ^. Configuring the JSON v4 took 2 days to finish up. 
@@ -223,4 +223,18 @@ USER AND GROUPS {DAC}
 =====================
 UNBOUND {rDNS}
 ==============
+So for Unbound I set it up for local authority and recursion. I made zone files for each of my "TLD"[Local Only]
+and the respective PTR zone files. I had the option of using local-zone or RPZ (Response Policy Zone) option as well
+as setting auth-zone option and I chose to use auth-zone so I could construct my own zone-file and learn more.
+Made a dnskey from the command below. In order to allow kea-dhcp-ddns service to update new zone files, I had to
+generate a key with tsig-key from the bind package, but I should have used ldns-keygen instead since it can do the same.
+I did basic configs for allowing my unbound config file to act as a recursive and validating resolver. Had to download
+root.hints file from [Link 1]. 
 
+.. code-block:: bash
+   unbound-anchor -a /path/to/key/name-of-key
+   wget -o /etc/unbound/root.hints https://www.internic.net/domain/named.cache
+
+Links:
+------
+[1.] [https://www.internic.net/domain/named.cache]
