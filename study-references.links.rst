@@ -189,9 +189,9 @@ the nature of DHCP and their options. For example setting up a DNR option for dh
 
 ::
 "data": "2, rdns-container.cntrl., 172.25.44.12, alpn=dot\\,doq port=8530"
-|json file config for v4-dnr options above ^. Configuring the JSON v4 took 2 days to finish up. 
+json file config for v4-dnr options above ^. Configuring the JSON v4 took 2 days to finish up. 
 The dhcpv6 is the next one to configure.
-|
+
 
 #: MariaDB SQL commands for setting up MariaDB server::
 @ MariaDB> SELECT @@system_time_zone;
@@ -219,9 +219,10 @@ Links:
 [9.] [https://datatracker.ietf.org/doc/html/rfc8499]
 #: Kea Example docs
 [10.] [https://gitlab.isc.org/isc-projects/kea/-/blob/master/doc/examples/kea4/all-options.json]
+[11.] [https://github.com/isc-projects/kea/blob/master/doc/examples/kea6/all-options.json]
 USER AND GROUPS {DAC}
 =====================
-UNBOUND {rDNS}
+BIND {rDNS}
 ==============
 So for Unbound I set it up for local authority and recursion. I made zone files for each of my "TLD"[Local Only]
 and the respective PTR zone files. I had the option of using local-zone or RPZ (Response Policy Zone) option as well
@@ -234,7 +235,14 @@ root.hints file from [Link 1].
 .. code-block:: bash
    unbound-anchor -a /path/to/key/name-of-key
    wget -o /etc/unbound/root.hints https://www.internic.net/domain/named.cache
+   chown -R named:named /etc/named.conf
+   chown -R named:named /var/named/
 
 Links:
 ------
 [1.] [https://www.internic.net/domain/named.cache]
+[2.] [https://www.youtube.com/watch?v=HJHOkZb1bQQ]
+[3.] [https://man.archlinux.org/man/named.conf.5]
+[4.] []
+[5.] []
+[6.] []
