@@ -165,15 +165,15 @@ Getting into the ethtool command line to check packet drops and changing network
    # These commands below are esentially what I ran to update the 
    # appropriate kernel parameters for maximize networking features
    
-   $ sysctl -w net.core.netdev_max_backlog=16384
-   $ sysctl -w net.core.somaxconn=8192
-   $ sysctl -w net.ipv4.tcp_max_syn_backlog=8192
-   $ sysctl -w net.ipv4.tcp_max_tw_buckets=2000000
-   $ sysctl -w net.ipv4.tcp_tw_reuse=1
-   $ sysctl -w net.ipv4.tcp_syncookies=1
-   $ sysctl -w net.core.default_qdisc=fq
-   $ sysctl -w net.ipv4.tcp_congestion_control=bbr
-   $ sysctl -w net.ipv4.conf.all.rp_filter=1
+   $ sysctl net.core.netdev_max_backlog=16384
+   $ sysctl net.core.somaxconn=8192
+   $ sysctl net.ipv4.tcp_max_syn_backlog=8192
+   $ sysctl net.ipv4.tcp_max_tw_buckets=2000000
+   $ sysctl net.ipv4.tcp_tw_reuse=1
+   $ sysctl net.ipv4.tcp_syncookies=1
+   $ sysctl net.core.default_qdisc=fq
+   $ sysctl net.ipv4.tcp_congestion_control=bbr
+   $ sysctl net.ipv4.conf.all.rp_filter=1
 
 Links:
 ------
