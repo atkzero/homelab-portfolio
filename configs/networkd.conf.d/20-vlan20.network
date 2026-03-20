@@ -1,7 +1,0 @@
-[Match]
-Name=vlan.20
-
-[Network]
-IPv4Forwarding=yes
-Address=10.0.20.1/26
-

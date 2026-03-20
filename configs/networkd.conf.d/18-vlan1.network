@@ -1,6 +1,0 @@
-[Match]
-Name=vlan.1
-
-[Network]
-IPv4Forwarding=yes
-Address=10.0.1.1/29
