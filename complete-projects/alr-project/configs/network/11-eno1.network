@@ -1,0 +1,11 @@
+[Match]
+Name=eno1
+
+[Link]
+RequiredForOnline=carrier
+
+[Network]
+IPv4Forwarding=yes
+VLAN=lamb
+VLAN=cntrl
+VLAN=accp

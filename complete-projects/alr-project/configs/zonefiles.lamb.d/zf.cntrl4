@@ -1,0 +1,16 @@
+$ORIGIN cntrl.
+$TTL 3600
+
+@ IN SOA cntrl. salr.cntrl. (
+    2026012601
+    3600
+    900
+    1209600
+    3600 )
+
+  IN NS cntrl.
+
+cntrl. IN A    172.25.44.14
+cntrl. IN AAAA fd25:aa44:cafe:25::14
+
+

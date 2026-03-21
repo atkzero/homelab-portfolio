@@ -1,0 +1,18 @@
+$TTL 3600	; 1 hour
+accp.			IN SOA	accp. salr.accp. (
+				2026013770 ; serial
+				2600       ; refresh (43 minutes 20 seconds)
+				900        ; retry (15 minutes)
+				1209600    ; expire (2 weeks)
+				3600       ; minimum (1 hour)
+				)
+			NS	accp.
+			A	172.30.44.1
+			AAAA	fd30:aa44:babe:30::1
+$TTL 2400	; 40 minutes
+ap1.accp.		A	172.30.44.50
+			DHCID	( AAABDRNsk4UOm9UVp6I6AaSFqWZZ2L4mJebSd8qxSnoe
+				udI= ) ; 0 1 32
+samsung.accp.		A	172.30.44.60
+			DHCID	( AAEB05kyHt7xzzQVJBgqE1LRBkLkeiR+r3pZuGYw0dPm
+				j4I= ) ; 1 1 32

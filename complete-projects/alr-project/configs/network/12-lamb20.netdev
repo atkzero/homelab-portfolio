@@ -1,0 +1,6 @@
+[NetDev]
+Name=lamb
+Kind=vlan
+
+[VLAN]
+Id=20

@@ -1,0 +1,14 @@
+$ORIGIN 0.3.0.0.e.b.a.b.4.4.a.a.0.3.d.f.ip6.arpa.
+$TTL 3600
+
+@ IN SOA accp. salr.accp. (
+    2026012601
+    3600
+    900
+    1209600
+    3600 )
+
+  IN NS accp.
+
+4.5.2.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0 IN PTR accp.
+

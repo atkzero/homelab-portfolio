@@ -1,0 +1,14 @@
+$ORIGIN 44.25.172.in-addr.arpa.
+$TTL 3600
+
+@ IN SOA cntrl. salr.cntrl. (
+    2026012601
+    3600
+    900
+    1209600
+    3600 )
+
+  IN NS cntrl.
+
+14 IN PTR cntrl.
+

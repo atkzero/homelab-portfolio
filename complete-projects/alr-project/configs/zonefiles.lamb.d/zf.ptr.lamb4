@@ -1,0 +1,14 @@
+$TTL 3600	; 1 hour
+44.20.172.in-addr.arpa.	IN SOA	lamb. salr.lamb. (
+				2026012924 ; serial
+				3600       ; refresh (1 hour)
+				900        ; retry (15 minutes)
+				1209600    ; expire (2 weeks)
+				3600       ; minimum (1 hour)
+				)
+			NS	lamb.
+254.44.20.172.in-addr.arpa. PTR	lamb.
+$TTL 2400	; 40 minutes
+4.44.20.172.in-addr.arpa. PTR	ao.lamb.
+			DHCID	( AAEBcSa8NScPEHxZ8Bz9uywM02X2X+KorZdLaOhKd17H
+				/Vs= ) ; 1 1 32

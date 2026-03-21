@@ -1,0 +1,20 @@
+$TTL 3600	; 1 hour
+44.30.172.in-addr.arpa.	IN SOA	accp. salr.accp. (
+				2026013380 ; serial
+				3600       ; refresh (1 hour)
+				900        ; retry (15 minutes)
+				1209600    ; expire (2 weeks)
+				3600       ; minimum (1 hour)
+				)
+			NS	accp.
+1.44.30.172.in-addr.arpa. PTR	accp.
+$TTL 2400	; 40 minutes
+50.44.30.172.in-addr.arpa. PTR	ap1.accp.
+			DHCID	( AAABDRNsk4UOm9UVp6I6AaSFqWZZ2L4mJebSd8qxSnoe
+				udI= ) ; 0 1 32
+60.44.30.172.in-addr.arpa. PTR	samsung.accp.
+			DHCID	( AAEB05kyHt7xzzQVJBgqE1LRBkLkeiR+r3pZuGYw0dPm
+				j4I= ) ; 1 1 32
+62.44.30.172.in-addr.arpa. PTR	iphone.accp.
+			DHCID	( AAEBP46mJCYqnz2eohL3AaL9/a9e4mcgiI+sLNEAdPZ9
+				ao4= ) ; 1 1 32

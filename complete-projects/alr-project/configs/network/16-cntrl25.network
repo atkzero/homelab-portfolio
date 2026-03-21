@@ -1,0 +1,8 @@
+[Match]
+Name=cntrl
+
+[Network]
+IPv4Forwarding=yes
+IPv6AcceptRA=no
+Address=172.25.44.14/28
+Address=fd25:aa44:cafe:25::14/64
