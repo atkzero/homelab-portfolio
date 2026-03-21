@@ -108,24 +108,16 @@ Below is a brief overview of current hardware being used throughout the homelab 
 
 homelab-portfolio/
 ├── README.md                    # Main overview
-├── docs/
-│   ├── hardware.md             # Hardware specs
-│   ├── network-diagram.md      # Network topology
-│   ├── services.md             # Running services
-│   ├── procedures.md           # How-to guides
-│   └── troubleshooting.md      # Common issues
-├── configs/
-│   ├── archrouter/
-│   │   └── dnsmasq.conf
-│   ├── cisco-c2960/
-│   │   ├── config
-│   │   └── 
-│   └── scripts/
-│       └── sync.sh
-├── projects/
-│   ├── ProjectArchRouter-v0.1.md
-│   └── README.md
-├── diagrams/
-│   └── README.md
+├── complete-projects/
+│   ├── alr-project/
+│   └── par-project/
+├── current-projects/
+│   └── readme.rst
+├── Infrastructure-design/
+│   ├── architecture/
+│   ├── network/
+│   ├── services/
+│   ├── lab-notes/
+│   └── readme.rst
 └── changelog.md                # Changes over time
 
