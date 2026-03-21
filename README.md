@@ -21,35 +21,29 @@ Below is a brief overview of current hardware being used throughout the homelab 
     - Kernel: [Linux-hardened]
     - Services: [Kea, Bind, Nftables, Systemd-networkd]
 ## Infrastructure Overview
-- **Host Machines**: 
-
-    - HP OMEN 25L GT12-0xxx
-      ---------------------
+- **Host Machines**:
+    - **HP OMEN 25L GT12-0xxx** [Main Machine]
         - CPU: [i7-10700F] 
         - RAM: [32GB RAM]
         - OS: [Arch Linux]
         - Kernel: [Linux 6.19.6]
-    - HP Elitebook 830 G6 [Proxmox Node 1]
-      -------------------
+    - **HP Elitebook 830 G6** [Proxmox Node 1]
         - CPU: [i5-8365U]
         - RAM: [16GB RAM]
         - OS: [Proxmox 9.1]
         - Kernel: [6.17.9-1-pve]
-    - HP Laptop 14-ep0xxx [Proxmox Node 2]
-      -------------------
+    - **HP Laptop 14-ep0xxx** [Proxmox Node 2]
         - CPU: [i3-1315U] 
-        - RAM: [8GB RAM]
+        - RAM: [12GB RAM]
         - OS: [Proxmox 9.1]
         - Kernel: [Linux 6.17.9-1-pve]
-    - Dell PowerEdge R720 [Proxmox Node 3]
-      -------------------
+    - **Dell PowerEdge R720** [Proxmox Node 3]
         - CPU: [Intel Xeon E5-2630(x2)]
         - RAM: [Reconfiguring...]
         - OS: [Proxmox 9.1]
         - Kernel: [Linux 6.17.9-1-pve]
         - Disk: [4TB HDD]
-    - Dell PowerEdge R720 [GNS3-SERVER]
-      -------------------
+    - **Dell PowerEdge R720** [GNS3-SERVER]
         - CPU: [Intel Xeon E5-2630(x2)]
         - RAM: [164GB DDR3]
         - OS: [Ubuntu]
@@ -57,8 +51,7 @@ Below is a brief overview of current hardware being used throughout the homelab 
         - Disk: []
         - Filesystem: [LVM]
         - Services: [gns3-server]
-    - HP Mini PC AK2
-      --------------
+    - **HP Mini PC AK2**
         - CPU: [Intel Celeron J3455] 
         - RAM: [8GB RAM]
         - OS: [Arch Linux]
@@ -66,36 +59,28 @@ Below is a brief overview of current hardware being used throughout the homelab 
         - Disk: [128GB SSD (x2)]
         - FileSystem: [btrfs]
         - Services: [dnsmasq, nftables, systemd-networkd]
-    - x2 Raspberry Pi 3 Model B+ 
-      --------------------------
+    - **x2 Raspberry Pi 3 Model B+** 
         - CPU: [Broadcom BCM2837]
         - RAM: 
         - OS: [None]
         - Kernel: [None]
-    - Apple Macbook Pro A1502 [INOP] (Needs new charger)
-      -----------------------
+    - **Apple Macbook Pro A1502** [INOP] (Needs new charger)
         - CPU: [i5-4258U] 
         - RAM: [4GB RAM]
         - OS: [None]
         - Kernel: [None]
-    - Apple MacBook Air A1466
-      -----------------------
+    - **Apple MacBook Air A1466**
         - CPU: [i5-5250U] 
         - RAM: [8GB RAM]
         - OS: [Arch Linux]
         - Kernel: [Linux 6.17.2]
-    - HP ProBook x360 435 G8 [INOP] (Wont boot up)
-      ----------------------
+    - **HP ProBook x360 435 G8** [INOP] (Wont boot up)
         - CPU: [AMD Ryzen 3 5400U] 
         - RAM: [None]
     - Lenovo ThinkCentre M710q [INOP]
-      ------------------------
     - HP Chromebook 14 G4 [INOP]
-      -------------------
     - Samsung Notebook XE500C13 [INOP]
-      -------------------------
     - Dell Chromebook 11 3180 [INOP]
-      -----------------------
 
 - **Network**:
     - Switch: [Cisco Catalyst 2960] **WS-C2960S-24PS-L**
