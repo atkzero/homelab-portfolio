@@ -3,7 +3,7 @@
 ## Quick Info
 - **Location**: Home Office
 - **Purpose**: Learning, Development, Self-hosting, Digital Freedom
-- **Last Updated**: 2025-12-23 22:56
+- **Last Updated**: 2026-03-21 13:40
 
 ## Purpose
 This repo documents all projects within my homelab environment and the reasoning behind them. It serves as both an overview of what's contained here and a running record of my experimentation.
