@@ -16,67 +16,67 @@ Below is a brief overview of current hardware being used throughout the homelab 
 - ALR(Arch Linux Router) Project | complete-projects/ 
   ---------------------------------------------------
     - Using the Arch Linux distribution, I built out a bare-metal system into a functional daily use router for my homelab.
-    - Hardware: [HP Mini PC AK2]
-    - OS: Arch [Linux]
-    - Kernel: [Linux-hardened]
-    - Services: [Kea, Bind, Nftables, Systemd-networkd]
+    - **Hardware:** HP Mini PC AK2
+    - **OS:** Arch Linux
+    - **Kernel:** Linux-hardened
+    - **Services:** (Kea, Bind, Nftables, Systemd-networkd)
 ## Infrastructure Overview
 - **Host Machines**:
     - **HP OMEN 25L GT12-0xxx** [Main Machine]
-        - CPU: [i7-10700F] 
-        - RAM: [32GB RAM]
-        - OS: [Arch Linux]
-        - Kernel: [Linux 6.19.6]
+        - **CPU:** i7-10700F
+        - **RAM:** 32GB RAM
+        - **OS:** Arch Linux
+        - **Kernel:** Linux 6.19.6
     - **HP Elitebook 830 G6** [Proxmox Node 1]
-        - CPU: [i5-8365U]
-        - RAM: [16GB RAM]
-        - OS: [Proxmox 9.1]
-        - Kernel: [6.17.9-1-pve]
+        - **CPU:** i5-8365U
+        - **RAM:** 16GB RAM
+        - **OS:** Proxmox 9.1
+        - **Kernel:** 6.17.9-1-pve
     - **HP Laptop 14-ep0xxx** [Proxmox Node 2]
-        - CPU: [i3-1315U] 
-        - RAM: [12GB RAM]
-        - OS: [Proxmox 9.1]
-        - Kernel: [Linux 6.17.9-1-pve]
+        - **CPU:** i3-1315U
+        - **RAM:** 12GB RAM
+        - **OS:** Proxmox 9.1
+        - **Kernel:** Linux 6.17.9-1-pve
     - **Dell PowerEdge R720** [Proxmox Node 3]
-        - CPU: [Intel Xeon E5-2630(x2)]
-        - RAM: [Reconfiguring...]
-        - OS: [Proxmox 9.1]
-        - Kernel: [Linux 6.17.9-1-pve]
-        - Disk: [4TB HDD]
-    - **Dell PowerEdge R720** [GNS3-SERVER]
-        - CPU: [Intel Xeon E5-2630(x2)]
-        - RAM: [164GB DDR3]
-        - OS: [Ubuntu]
-        - Kernel: [Linux 6.19.1]
-        - Disk: []
-        - Filesystem: [LVM]
-        - Services: [gns3-server]
+        - **CPU:** Intel Xeon E5-2630(x2)
+        - **RAM:** Reconfiguring...
+        - **OS:** Proxmox 9.1
+        - **Kernel:** Linux 6.17.9-1-pve
+        - **Disk:** 4TB HDD
+    - **Dell PowerEdge R720** [GNS3 Server]
+        - **CPU:** Intel Xeon E5-2630(x2)
+        - **RAM:** 164GB DDR3
+        - **OS:** Ubuntu Server 25.04.4 LTS
+        - **Kernel:** Linux 6.8.0-100
+        - **Disk:** []
+        - **Filesystem:** LVM
+        - **Service(s):** (gns3)
     - **HP Mini PC AK2**
-        - CPU: [Intel Celeron J3455] 
-        - RAM: [8GB RAM]
-        - OS: [Arch Linux]
-        - Kernel: [Linux-lts 6.12.1]
-        - Disk: [128GB SSD (x2)]
-        - FileSystem: [btrfs]
-        - Services: [dnsmasq, nftables, systemd-networkd]
+        - **CPU:** Intel Celeron J3455 
+        - **RAM:** 8GB RAM
+        - **OS:** Arch Linux
+        - **Kernel:** Linux-lts 6.12.1
+        - **Disk:** 128GB SSD (x2)
+        - **FileSystem:** btrfs
+        - **Service(s):** (dnsmasq, nftables, systemd-networkd)
     - **x2 Raspberry Pi 3 Model B+** 
-        - CPU: [Broadcom BCM2837]
-        - RAM: 
-        - OS: [None]
-        - Kernel: [None]
+        - **CPU:** Broadcom BCM2837
+        - **RAM:** 
+        - **OS:** [None]
+        - **Kernel:** [None]
     - **Apple Macbook Pro A1502** [INOP] (Needs new charger)
-        - CPU: [i5-4258U] 
-        - RAM: [4GB RAM]
-        - OS: [None]
-        - Kernel: [None]
+        - **CPU:** i5-4258U 
+        - **RAM:** 4GB RAM
+        - **OS:** [None]
+        - **Kernel:** [None]
     - **Apple MacBook Air A1466**
-        - CPU: [i5-5250U] 
-        - RAM: [8GB RAM]
-        - OS: [Arch Linux]
-        - Kernel: [Linux 6.17.2]
+        - **CPU:** i5-5250U 
+        - **RAM:** 8GB RAM
+        - **OS:** Arch Linux
+        - **Kernel:** Linux 6.17.2
     - **HP ProBook x360 435 G8** [INOP] (Wont boot up)
-        - CPU: [AMD Ryzen 3 5400U] 
-        - RAM: [None]
+        - **CPU:** AMD Ryzen 3 5400U 
+        - **RAM:** [None]
     - Lenovo ThinkCentre M710q [INOP]
     - HP Chromebook 14 G4 [INOP]
     - Samsung Notebook XE500C13 [INOP]
@@ -98,10 +98,9 @@ Below is a brief overview of current hardware being used throughout the homelab 
     - IP Forwarding [Linux Kernel 6.12.1]
 
 ## Quick Links
-- [Network Diagram](./docs/network-diagram.md)
-- [Hardware Inventory](./docs/hardware.md)
-- [Services](./docs/services.md)
-- [Procedures](./docs/procedures.md)
+- [complete-projects](./complete-projects/)
+- [current-projects](./current-projects/)
+- [infrastructure-design](./infrastructure-design/)
 ````
 
 ## Folder Structure
