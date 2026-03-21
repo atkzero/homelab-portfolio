@@ -468,7 +468,7 @@ for this use case.
 
 Phase 2: BIND (Final Approach)
 ------------------------------
-The zone files created for Unbound were reused and placed into `/var/named/zonefiles.lamb.d/`. BIND's support 
+The zone files created for Unbound were reused and placed into `/var/named/zonefiles.lamb.d/`. BINDs support 
 for DDNS updates made it the correct tool for this setup. A named ACL was defined in `named.conf` to explicitly 
 list all VLAN interface addresses (both IPv4 and IPv6). This ACL was used to:
 
