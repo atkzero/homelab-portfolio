@@ -71,7 +71,7 @@ BTRFS
   dysfunction, I want the system to be easily restorable to a known good state with minimal downtime, 
   especially using the ALPM(Arch Linux Package Management).
 
-  Between BTRFS, ZFS, LVM, Btrfs was chosen due to its snapshotting capabilities and lightweight 
+  Between BTRFS, ZFS, LVM, BTRFS was chosen due to its snapshotting capabilities and lightweight 
   integration into the Arch router. ZFS emphasizes robust software level redundancy LVM focuses on 
   flexible volume management. While both are powerful, neither directly aligned with the operational 
   goal of rapid roll back and simple system restoration for a router that does not require large data 
@@ -87,7 +87,7 @@ BTRFS
   or unrelated subvolume contents. Likewise, /home remains independently snapshot capable. The /@backups 
   subvolume is separated for backups to be stored separately and eventually be sent to the SATA SSD (128GB), 
   that also will have a btrfs solely for storing backups separately. This is to ensure the longevity of SSD 
-  and it not being apart of the operational load of the router and the exentsive read and writes that may occur. 
+  and it not being apart of the operational load of the router and the extensive read and writes that may occur. 
 
   Additional subvolumes were for container storage. These will later be configured else where off the router with 
   Btrfs quotas to experiment with space management. Quotas are not necessary for the router's functionality, 
@@ -155,15 +155,15 @@ Working through this on the router project has convinced me to adopt Btrfs on my
 
 Links:
 ------
-[https://archive.kernel.org/oldwiki/btrfs.wiki.kernel.org/index.php/SysadminGuide.html#Copy_on_Write_.28CoW.29]
-[https://wiki.archlinux.org/title/Btrfs#btrfs_check]
-[https://man.archlinux.org/man/btrfs.5]
-[https://man.archlinux.org/listing/core/btrfs-progs/]
-[https://man.archlinux.org/man/core/btrfs-progs/btrfs-subvolume.8.en]
-[https://www.youtube.com/watch?v=RPO-fS6HQbY]
-[https://www.youtube.com/watch?v=71AnM15TDYw]
-[https://wiki.archlinux.org/title/System_backup]
-[https://btrfs.readthedocs.io/en/latest/btrfs-subvolume.html#subvolume-and-snapshot]
+[1.][https://archive.kernel.org/oldwiki/btrfs.wiki.kernel.org/index.php/SysadminGuide.html#Copy_on_Write_.28CoW.29]
+[2.][https://wiki.archlinux.org/title/Btrfs#btrfs_check]
+[3.][https://man.archlinux.org/man/btrfs.5]
+[4.][https://man.archlinux.org/listing/core/btrfs-progs/]
+[5.][https://man.archlinux.org/man/core/btrfs-progs/btrfs-subvolume.8.en]
+[6.][https://www.youtube.com/watch?v=RPO-fS6HQbY]
+[7.][https://www.youtube.com/watch?v=71AnM15TDYw]
+[8.][https://wiki.archlinux.org/title/System_backup]
+[9.][https://btrfs.readthedocs.io/en/latest/btrfs-subvolume.html#subvolume-and-snapshot]
 
 KERNEL {LINUX-HARDENED}
 =======================
@@ -206,9 +206,9 @@ KERNEL {LINUX-HARDENED}
 
 Links:
 ------
-[https://wiki.archlinux.org/title/Mkinitcpio#Using_net]
-[https://wiki.archlinux.org/title/Sysctl#Networking]
-[https://access.redhat.com/sites/default/files/attachments/20150325_network_performance_tuning.pdf]
+[1.][https://wiki.archlinux.org/title/Mkinitcpio#Using_net]
+[2.][https://wiki.archlinux.org/title/Sysctl#Networking]
+[3.][https://access.redhat.com/sites/default/files/attachments/20150325_network_performance_tuning.pdf]
 
 CONTAINERIZATION {SYSTEMD-NSPAWN}
 =================================
@@ -265,27 +265,10 @@ CONTAINERIZATION {SYSTEMD-NSPAWN}
 
 Links:
 ------
-[1.] [https://wiki.archlinux.org/title/Systemd-nspawn]
-[2.] [https://man.archlinux.org/man/systemd-nspawn.1]
-[3.] [https://man.archlinux.org/man/machinectl.1]
-[4.] [https://man.archlinux.org/man/systemd.nspawn.5.en]
-
-BIRD2 {ROUTING PROTOCOL DAEMON}
-===============================
-  Routing services such as BIRD2, along with the firewall configuration handled by nftables, will remain on the host system rather than 
-  being containerized. The primary reason for this decision is to keep routing protocols operating as close to the Linux kernel networking 
-  stack as possible. Running these components directly on the host allows them to interact more naturally with kernel routing tables, 
-  firewall rules, and the networking parameters configured through sysctl.
-
-  The routing component of the project will be implemented after a second router is introduced into the environment, most likely as a virtual 
-  router hosted on a Proxmox system. While deploying a dynamic routing protocol in such a small network may be excessive from a purely practical 
-  standpoint, the goal here is experimentation rather than necessity. Implementing routing protocols in this environment provides an opportunity 
-  to explore how these systems behave and how policy decisions propagate across routers.
-
-  These early experiments will eventually be expanded into a GNS3-based lab, where larger simulated network topologies can be built and tested. 
-  At that stage, the ideas explored in the homelab environment can be validated under more complex routing scenarios. As the project evolves, 
-  the current router may be simplified and some services removed or relocated to other systems. This “downgrade” is intentional and reflects the 
-  experimental nature of the project, where components are added, tested, and later refactored as the overall architecture matures.
+[1.][https://wiki.archlinux.org/title/Systemd-nspawn]
+[2.][https://man.archlinux.org/man/systemd-nspawn.1]
+[3.][https://man.archlinux.org/man/machinectl.1]
+[4.][https://man.archlinux.org/man/systemd.nspawn.5.en]
 
 
 NFTABLES
@@ -304,12 +287,12 @@ NFTABLES
 
 Links:
 ------
-[https://www.youtube.com/watch?v=K8JPwbcNy_0&list=PLUF494I4KUvqwDjhOoP3IFUpgEhE1OVDO]
-[https://www.youtube.com/watch?v=YLVKuA4kiMA&list=PLUF494I4KUvqwDjhOoP3IFUpgEhE1OVDO&index=2]
-[https://man.archlinux.org/man/nft.8]
-[https://wiki.archlinux.org/title/Nftables]
-[https://wiki.nftables.org/wiki-nftables/index.php/Simple_ruleset_for_a_home_router]
-[https://www.youtube.com/watch?v=dnkuDjblI-k&list=PLsYMit2eI6VWcwaOCuNI3mPZ8t6palQx5&index=1]
+[1.][https://www.youtube.com/watch?v=K8JPwbcNy_0&list=PLUF494I4KUvqwDjhOoP3IFUpgEhE1OVDO]
+[2.][https://www.youtube.com/watch?v=YLVKuA4kiMA&list=PLUF494I4KUvqwDjhOoP3IFUpgEhE1OVDO&index=2]
+[3.][https://man.archlinux.org/man/nft.8]
+[4.][https://wiki.archlinux.org/title/Nftables]
+[5.][https://wiki.nftables.org/wiki-nftables/index.php/Simple_ruleset_for_a_home_router]
+[6.][https://www.youtube.com/watch?v=dnkuDjblI-k&list=PLsYMit2eI6VWcwaOCuNI3mPZ8t6palQx5&index=1]
 
 NETWORKD
 ========
@@ -331,14 +314,10 @@ NETWORKD
 
 Links:
 ------
-#: since systemd is so monolithic these are all networkd and related man pages:
-https://man.archlinux.org/search?q=networkd&go=Go
-#: .netdev files and their config parameters:
-https://man.archlinux.org/man/systemd.netdev.5.en
-#: this is the man page for setting .network files:
-https://man.archlinux.org/man/systemd.network.5.en
-#: networkctl commands and more config options:
-https://man.archlinux.org/man/networkctl.1.en
+[1.][https://man.archlinux.org/search?q=networkd&go=Go]
+[2.][https://man.archlinux.org/man/systemd.netdev.5.en]
+[3.][https://man.archlinux.org/man/systemd.network.5.en]
+[4.][https://man.archlinux.org/man/networkctl.1.en]
 
 KEA + MariaDB {DHCP}
 ====================
@@ -396,25 +375,19 @@ IPv6 and Dual-Stack Challenges
 
 Links:
 ------
-[1.] [https://kea.readthedocs.io/en/stable/arm/admin.html]
-[2.] [https://wiki.archlinux.org/title/Kea]
-[3.] [https://wiki.archlinux.org/title/MariaDB]
-[4.] [https://mariadb.com/docs/server]
-[5.] [https://kea.readthedocs.io/en/stable/arm/dhcp4-srv.html#dhcpv4-server-configuration]
-[6.] [https://datatracker.ietf.org/doc/html/rfc2131#appendix-A]
-#: This is a detailed report from ISC detailing the perfomance differences between different leasing types
-[7.] [https://reports.kea.isc.org/performance/stable/2.6.4/report.html]
-#: RFC 9463
-[8.] [https://datatracker.ietf.org/doc/html/rfc9463]
-#: RFC 8499 {referenced in RFC 9463 just holds terminology for DNS}
-[9.] [https://datatracker.ietf.org/doc/html/rfc8499]
-#: RFC 7341 DHCP 4o6 
-[10.] [https://datatracker.ietf.org/doc/html/rfc7341]
-#: RFC 4361 Node-specific client ID for DHCPv4 
-[11.] [https://datatracker.ietf.org/doc/html/rfc4361]
-#: Kea Example docs
-[12.] [https://gitlab.isc.org/isc-projects/kea/-/blob/master/doc/examples/kea4/all-options.json]
-[13.] [https://github.com/isc-projects/kea/blob/master/doc/examples/kea6/all-options.json]
+[1.][https://kea.readthedocs.io/en/stable/arm/admin.html]
+[2.][https://wiki.archlinux.org/title/Kea]
+[3.][https://wiki.archlinux.org/title/MariaDB]
+[4.][https://mariadb.com/docs/server]
+[5.][https://kea.readthedocs.io/en/stable/arm/dhcp4-srv.html#dhcpv4-server-configuration]
+[6.][https://datatracker.ietf.org/doc/html/rfc2131#appendix-A]
+[7.][https://reports.kea.isc.org/performance/stable/2.6.4/report.html]
+[8.][https://datatracker.ietf.org/doc/html/rfc9463]
+[9.][https://datatracker.ietf.org/doc/html/rfc8499]
+[10.][https://datatracker.ietf.org/doc/html/rfc7341]
+[11.][https://datatracker.ietf.org/doc/html/rfc4361]
+[12.][https://gitlab.isc.org/isc-projects/kea/-/blob/master/doc/examples/kea4/all-options.json]
+[13.][https://github.com/isc-projects/kea/blob/master/doc/examples/kea6/all-options.json]
 
 BIND {DNS}
 ==========
@@ -512,7 +485,7 @@ Key Takeaways
 
 Links:
 ------
-[1.] [https://www.internic.net/domain/named.cache]
-[2.] [https://www.youtube.com/watch?v=HJHOkZb1bQQ]
-[3.] [https://man.archlinux.org/man/named.conf.5]
-[4.] [https://datatracker.ietf.org/doc/html/rfc4703#section-5.2]
+[1.][https://www.internic.net/domain/named.cache]
+[2.][https://www.youtube.com/watch?v=HJHOkZb1bQQ]
+[3.][https://man.archlinux.org/man/named.conf.5]
+[4.][https://datatracker.ietf.org/doc/html/rfc4703#section-5.2]
