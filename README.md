@@ -104,19 +104,20 @@ Below is a brief overview of current hardware being used throughout the homelab 
 ````
 
 ## Folder Structure
-
-homelab-portfolio/
-├── README.md                    # Main overview
-├── complete-projects/
-│   ├── alr-project/
-│   └── par-project/
-├── current-projects/
-│   └── readme.rst
-├── Infrastructure-design/
-│   ├── architecture/
-│   ├── network/
-│   ├── services/
-│   ├── lab-notes/
-│   └── readme.rst
-└── changelog.md                # Changes over time
-
+.
+├── complete-projects
+│   ├── alr-project
+│   │   ├── configs
+│   │   │   ├── kea
+│   │   │   │   └── radius
+│   │   │   ├── network
+│   │   │   ├── nspawn
+│   │   │   └── zonefiles.lamb.d
+│   │   └── docs
+│   └── par-project
+├── current-projects
+└── infrastructure-design
+    ├── architecture
+    ├── lab-notes
+    ├── network
+    └── services
