@@ -116,8 +116,11 @@ Below is a brief overview of current hardware being used throughout the homelab 
 │   │   └── docs
 │   └── par-project
 ├── current-projects
-└── infrastructure-design
-    ├── architecture
-    ├── lab-notes
-    ├── network
-    └── services
+├── infrastructure-design
+│   ├── architecture
+│   ├── lab-notes
+│   ├── network
+│   └── services
+└── labs
+    └── networking-labs
+
