@@ -13,7 +13,7 @@ This homelab portfolio exists primarily as a learning space. Projects documented
 Below is a brief overview of current hardware being used throughout the homelab environment. Also a brief run down of everything this homelab has to offer and brief project overview so you can navigate to the area of interest. Please provide any feedback you may have all feedback is helpful and greatly appreciated.
 
 ## Project Overview
-- ALR(Arch Linux Router) Project | complete-projects/ 
+- ALR(Arch Linux Router) Project | complete-projects/alr-project
   ---------------------------------------------------
     - Using the Arch Linux distribution, I built out a bare-metal system into a functional daily use router for my homelab.
     - **Hardware:** HP Mini PC AK2
@@ -27,22 +27,33 @@ Below is a brief overview of current hardware being used throughout the homelab 
         - **RAM:** 32GB RAM
         - **OS:** Arch Linux
         - **Kernel:** Linux 6.19.6
-    - **HP Elitebook 830 G6** [Proxmox Node 1]
-        - **CPU:** i5-8365U
-        - **RAM:** 16GB RAM
-        - **OS:** Proxmox 9.1
-        - **Kernel:** 6.17.9-1-pve
-    - **HP Laptop 14-ep0xxx** [Proxmox Node 2]
+    - **HP Laptop 14-ep0xxx** [Proxmox Node 1]
         - **CPU:** i3-1315U
         - **RAM:** 12GB RAM
         - **OS:** Proxmox 9.1
         - **Kernel:** Linux 6.17.9-1-pve
-    - **Dell PowerEdge R720** [Proxmox Node 3]
+    - **HP Mini PC AK2** [Proxmox Node 2]
+        - **CPU:** Intel Celeron J345 
+        - **RAM:** 8GB RAM
+        - **OS:** 
+        - **Kernel:** 
+        - **Disk:** 128GB SSD
+        - **FileSystem:** 
+        - **Service(s):** 
+    - **HP Mini PC AK2** [Proxmox Node 3]
+        - **CPU:** Intel Celeron J345 
+        - **RAM:** 8GB RAM
+        - **OS:** 
+        - **Kernel:** 
+        - **Disk:** 128GB SSD
+        - **FileSystem:** 
+        - **Service(s):** 
+    - **Dell PowerEdge R720** [Windows Server 2025]
         - **CPU:** Intel Xeon E5-2630(x2)
         - **RAM:** Reconfiguring...
-        - **OS:** Proxmox 9.1
-        - **Kernel:** Linux 6.17.9-1-pve
-        - **Disk:** 4TB HDD
+        - **OS:** Windows Server 2025 
+        - **Kernel: Windows
+        - **Disk:**
     - **Dell PowerEdge R720** [GNS3 Server]
         - **CPU:** Intel Xeon E5-2630(x2)
         - **RAM:** 164GB DDR3
@@ -51,14 +62,6 @@ Below is a brief overview of current hardware being used throughout the homelab 
         - **Disk:** []
         - **Filesystem:** LVM
         - **Service(s):** (gns3)
-    - **HP Mini PC AK2**
-        - **CPU:** Intel Celeron J3455 
-        - **RAM:** 8GB RAM
-        - **OS:** Arch Linux
-        - **Kernel:** Linux-lts 6.12.1
-        - **Disk:** 128GB SSD (x2)
-        - **FileSystem:** btrfs
-        - **Service(s):** (dnsmasq, nftables, systemd-networkd)
     - **x2 Raspberry Pi 3 Model B+** 
         - **CPU:** Broadcom BCM2837
         - **RAM:** 
