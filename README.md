@@ -27,6 +27,12 @@ Below is a brief overview of current hardware being used throughout the homelab 
         - **RAM:** 32GB RAM
         - **OS:** Arch Linux
         - **Kernel:** Linux 6.19.6
+    - Lenovo ThinkCentre M710q [Arch Kea + BIND9]
+        - **CPU**:
+        - **RAM**:
+        - **OS**: 
+        - **Kernel**:
+        - **Disk**: 
     - **HP Laptop 14-ep0xxx** [Proxmox Node 1]
         - **CPU:** i3-1315U
         - **RAM:** 12GB RAM
@@ -80,19 +86,17 @@ Below is a brief overview of current hardware being used throughout the homelab 
     - **HP ProBook x360 435 G8** [INOP] (Wont boot up)
         - **CPU:** AMD Ryzen 3 5400U 
         - **RAM:** [None]
-    - Lenovo ThinkCentre M710q [INOP]
     - HP Chromebook 14 G4 [INOP]
     - Samsung Notebook XE500C13 [INOP]
     - Dell Chromebook 11 3180 [INOP]
 
 - **Network**:
-    - Switch: [Cisco Catalyst 2960] **WS-C2960S-24PS-L**
+    - L2 Switch: [Cisco Catalyst 2960] **WS-C2960S-24PS-L**
+    - L3 Switch: [Netgear GC752X]
     - Network Hub: [Netgear FS105]
     - Router:
-        - [**HP Mini PC AK2**]
         - [**TP-Link Deco 6E**]
-    - Access Points:
-        - [Netgear Nighthawk RAX40]
+        - [ASUS RT-AC52R (Open-WRT)]
 
 - **Services**:
     - DHCP Server [dnsmasq]
@@ -107,7 +111,6 @@ Below is a brief overview of current hardware being used throughout the homelab 
 ````
 
 ## Folder Structure
-.
 ├── complete-projects
 │   ├── alr-project
 │   │   ├── configs
@@ -120,10 +123,5 @@ Below is a brief overview of current hardware being used throughout the homelab 
 │   └── par-project
 ├── current-projects
 ├── infrastructure-design
-│   ├── architecture
-│   ├── lab-notes
-│   ├── network
-│   └── services
 └── labs
     └── networking-labs
-
